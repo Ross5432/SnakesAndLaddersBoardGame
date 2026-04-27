@@ -5,33 +5,37 @@
 gamecat_list = []
 
 def add_game_to_list(game):
-    # ================= STUDENT TASK START =================
-    # Add the game to gamecat_list.
-    print()             # This statement can be replaced
-    # ================== STUDENT TASK END ==================
+    gamecat_list.append(game)
+
 
 def get_game_list():
-    # ================= STUDENT TASK START =================
-    # Return the full game catalogue list.
-    print()             # This statement can be replaced
-    # ================== STUDENT TASK END ==================
+    return gamecat_list
+
 
 def search_game_list(query):
-    # ================= STUDENT TASK START =================
-    # Search for matching games in gamecat_list.
-    print()             # This statement can be replaced
-    # ================== STUDENT TASK END ==================
+    results = []
+
+    for game in gamecat_list:
+        if query.lower() in game["title"].lower():
+            results.append(game)
+
+    return results
+
 
 def update_game_in_list(original_title, updated_game):
-    # ================= STUDENT TASK START =================
-    # Find the game with title original_title
-    # and replace it with updated_game.
-    # Return True if the update worked, otherwise False.
-    print()             # This statement can be replaced
-    # ================== STUDENT TASK END ==================
+for i in range(len(gamecat_list)):
+        if gamecat_list[i]["title"].lower() == original_title.lower():
+            gamecat_list[i] = updated_game
+            return True
+
+    return False
+
 
 def delete_game_from_list(game):
-    # ================= STUDENT TASK START =================
-    # Delete a game from gamecat_list.
-    print()             # This statement can be replaced
-    # ================== STUDENT TASK END ==================
+     if game in gamecat_list:
+        gamecat_list.remove(game)
+        return True
+
+    return False
+
+
