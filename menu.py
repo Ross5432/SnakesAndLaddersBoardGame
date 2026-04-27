@@ -13,39 +13,58 @@ def display_menu():
     print("5. Delete Game")
     print("6. Quit")
 
+
 def option_1():
-    # ================= STUDENT TASK START =================
-    # Get the list of games from get_game_list()
-    # and display each one using display_game().
-    print()             # This statement can be replaced
-    # ================== STUDENT TASK END ==================
+    games = get_game_list()
+
+    if not games:
+        print("No games in the catalogue.")
+        return
+    
+    for game in games:
+        display_game(game)
+
 
 def option_2():
-    # ================= STUDENT TASK START =================
-    # Ask the user for a new game using input_game()
-    # then add it to the list using add_game_to_list().
-    print()             # This statement can be replaced
-    # ================== STUDENT TASK END ==================
+    new_game = input_game()
+    add_game_to_list(new_game)
+    print("Game added successfully.")
 
+   
 def option_3():
-    # ================= STUDENT TASK START =================
-    # Ask the user what they want to search for,
-    # call search_game_list(),
-    # then display the matching game(s).
-    print()             # This statement can be replaced
-    # ================== STUDENT TASK END ==================
+    search_term = input("Enter game name or keyword: ")
+    results = search_game_list(search_term)
+
+    if not results:
+        print("No matching games found.")
+        return
+    
+    for game in results:
+        display_game(game)
+
+
 
 def option_4():
-    # ================= STUDENT TASK START =================
-    # Ask the user which game should be updated.
-    # Find the game, call edit_game(...) to build the new record,
-    # then call update_game_in_list(...).
-    print()             # This statement can be replaced
-    # ================== STUDENT TASK END ==================
+    name = input("Enter name of game to update: ")
+
+    game = search_game_list(name)
+
+    if not game:
+        print("Game not found.")
+        return
+
+    updated_game = edit_game(game[0])
+    update_game_in_list(game[0], updated_game)
+
+    print("Game updated successfully.")
+
 
 def option_5():
-    # ================= STUDENT TASK START =================
-    # Ask the user which game should be deleted,
-    # then call delete_game_from_list().
-    print()             # This statement can be replaced
-    # ================== STUDENT TASK END ==================
+    name = input("Enter name of game to delete: ")
+
+    deleted = delete_game_from_list(name)
+
+    if deleted:
+        print("Game deleted.")
+    else:
+        print("Game not found.")
