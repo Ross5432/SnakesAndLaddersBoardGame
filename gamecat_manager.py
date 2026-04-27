@@ -23,7 +23,7 @@ def search_game_list(query):
 
 
 def update_game_in_list(original_title, updated_game):
-for i in range(len(gamecat_list)):
+    for i in range(len(gamecat_list)):
         if gamecat_list[i]["title"].lower() == original_title.lower():
             gamecat_list[i] = updated_game
             return True
