@@ -2,10 +2,6 @@
 # gamecat_main.py - Main Module
 # Responsible for displaying the menu and accepting user choices
 
-# STUDENT NOTE:
-# This file is already complete.
-# You should NOT need to change anything here unless your tutor tells you to.
-
 from menu import display_menu, option_1, option_2, option_3, option_4, option_5
 
 def get_user_choice():
