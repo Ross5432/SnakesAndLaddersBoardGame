@@ -32,7 +32,7 @@ def update_game_in_list(original_title, updated_game):
 
 
 def delete_game_from_list(game):
-     if game in gamecat_list:
+    if game in gamecat_list:
         gamecat_list.remove(game)
         return True
 
